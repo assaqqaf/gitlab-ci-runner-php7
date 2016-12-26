@@ -54,6 +54,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
     php7.0-dev \
     php7.0-json \
     php7.0-opcache \
+    php7.0-mcrypt \
     php7.0-mysql \
     php7.0-phpdbg \
     php7.0-mbstring \
