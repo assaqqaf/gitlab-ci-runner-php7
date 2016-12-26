@@ -47,14 +47,35 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 # PHP Extensions
 
 RUN add-apt-repository -y ppa:ondrej/php && \
-    DEBIAN_FRONTEND=noninteractive apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y -qq php-pear php7.0-dev php7.0-mcrypt php7.0-zip php7.0-xml php7.0-mbstring php7.0-gd php7.0-curl php7.0-json php7.0-mysql php7.0-tokenizer php7.0-cli php7.0-imap && \
+    DEBIAN_FRONTEND=noninteractive apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+    php7.0-cli \
+    php7.0-common \
+    php7.0-dev \
+    php7.0-json \
+    php7.0-opcache \
+    php7.0-mysql \
+    php7.0-phpdbg \
+    php7.0-mbstring \
+    php7.0-gd \
+    php7.0-imap \
+    php7.0-ldap \
+    php7.0-pgsql \
+    php7.0-sqlite \
+    php7.0-pdo \
+    php7.0-pspell \
+    php7.0-recode \
+    php7.0-tidy \
+    php7.0-intl \
+    php7.0-curl \
+    php7.0-zip \
+    php7.0-xml \
+    php-mongodb \
+    php-redis \
+    php-memcache && \
     DEBIAN_FRONTEND=noninteractive apt-get remove --purge php5 php5-common
 
-# MONGO extension
-RUN pecl install mongodb && \
-    echo "extension=mongodb.so" > /etc/php/7.0/cli/conf.d/20-mongodb.ini && \
-    echo "extension=mongodb.so" > /etc/php/7.0/mods-available/mongodb.ini
+
 
 # Run xdebug installation.
 RUN wget --no-check-certificate https://xdebug.org/files/xdebug-2.4.0rc4.tgz && \
