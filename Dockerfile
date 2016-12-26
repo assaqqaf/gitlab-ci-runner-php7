@@ -83,10 +83,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /tmp
 
 # Run phpunit installation.
-RUN composer selfupdate && \
-    composer global require hirak/prestissimo --prefer-dist --no-interaction && \
-    composer require "phpunit/phpunit" --prefer-dist --no-interaction && \
-    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit && \
-    rm -rf /root/.composer/cache/*
+#RUN composer selfupdate && \
+#    composer global require hirak/prestissimo --prefer-dist --no-interaction && \
+#    composer require "phpunit/phpunit" --prefer-dist --no-interaction && \
+#    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit && \
+#    rm -rf /root/.composer/cache/*
 
 RUN apt-get clean -y && apt-get --purge autoremove -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
