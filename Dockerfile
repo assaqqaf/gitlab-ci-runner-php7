@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Eduardo Bizarro <edbizarro@gmail.com>
+MAINTAINER Abdullah Moahmmed <abbdullah1@hotmail.com>
 
 # Set correct environment variables
 ENV HOME /root
