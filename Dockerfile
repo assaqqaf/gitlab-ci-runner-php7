@@ -69,7 +69,7 @@ RUN wget --no-check-certificate https://xdebug.org/files/xdebug-2.4.0rc4.tgz && 
     echo 'xdebug.remote_enable=1' >> /etc/php/7.0/cli/conf.d/20-xdebug.ini
 
 # Time Zone
-RUN echo "date.timezone=America/Sao_Paulo" > /etc/php/7.0/cli/conf.d/date_timezone.ini
+RUN echo "date.timezone=UTC" > /etc/php/7.0/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
 
